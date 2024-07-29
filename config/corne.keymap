@@ -13,7 +13,7 @@
         compatible = "zmk,combos";
 
         deafult_layer {
-            bindings = <&sl 0>;
+            bindings = <&sl 6>;
             key-positions = <36 37>;
         };
     };
@@ -22,17 +22,11 @@
         compatible = "zmk,keymap";
 
         Default {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-
             bindings = <
-&none  &kp V  &kp M  &kp L    &kp R      &kp P             &kp X             &kp F  &kp O    &kp U          &kp J      &none
-&none  &kp S  &kp T  &kp R    &kp D      &kp Y             &kp PERIOD        &kp N  &kp A    &kp E          &kp I      &none
-&none  &kp Z  &kp K  &kp Q    &kp G      &kp W             &kp B             &kp H  &kp SQT  &kp SEMICOLON  &kp COMMA  &none
-                     &kp TAB  &kp SPACE  &kp LEFT_SHIFT    &kp LEFT_CONTROL  &to 1  &trans
+&trans  &kp Q  &kp W  &kp E  &kp R      &kp T      &kp Y           &kp U     &kp I      &kp O    &kp P       &trans
+&trans  &kp A  &kp S  &kp D  &kp F      &kp G      &kp H           &kp J     &kp K      &kp L    &kp RET     &trans
+&trans  &kp Z  &kp X  &kp C  &kp V      &kp B      &kp N           &kp M     &kp COMMA  &kp DOT  &kp ESCAPE  &trans
+                      &mo 5  &kp SPACE  &kp TAB    &kp LEFT_SHIFT  &kp BSPC  &to 1
             >;
         };
 
@@ -46,8 +40,8 @@
             bindings = <
 &none  &kp ESCAPE  &kp AT_SIGN  &kp POUND          &kp DOLLAR         &kp PERCENT          &kp CARET             &kp AMPERSAND         &kp ASTERISK           &kp SEMICOLON      &kp BACKSPACE  &none
 &none  &kp TAB     &kp EQUAL    &kp SQT            &kp SINGLE_QUOTE   &kp SINGLE_QUOTE     &kp NON_US_BACKSLASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE           &kp ENTER      &trans
-&none  &kp GRAVE   &kp DOLLAR   &kp DOUBLE_QUOTES  &kp DOUBLE_QUOTES  &kp DOUBLE_QUOTES    &kp LEFT_BRACKET      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &to 3          &trans
-                                &kp LGUI           &to 0              &kp SPACE            &kp LA(RET)           &to 3                 &kp RALT
+&none  &kp GRAVE   &kp DOLLAR   &kp DOUBLE_QUOTES  &kp DOUBLE_QUOTES  &kp DOUBLE_QUOTES    &kp LEFT_BRACKET      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &to 0          &trans
+                                &kp LGUI           &to 4              &kp SPACE            &kp LA(RET)           &to 3                 &tog 2
             >;
         };
 
@@ -55,8 +49,8 @@
             bindings = <
 &trans  &kp ESCAPE  &trans  &trans  &trans  &kp Q               &trans         &kp LS(TAB)  &kp TAB  &trans     &kp BACKSPACE  &trans
 &trans  &kp TAB     &trans  &trans  &trans  &kp DEL             &kp LEFT       &kp DOWN     &kp UP   &kp RIGHT  &kp RETURN     &trans
-&trans  &kp GRAVE   &trans  &trans  &trans  &trans              &mkp MB1       &trans       &trans   &trans     &trans         &trans
-                            &to 0   &to 0   &kp LEFT_CONTROL    &kp RIGHT_ALT  &to 1        &trans
+&trans  &kp GRAVE   &trans  &trans  &trans  &trans              &mkp MB1       &trans       &trans   &trans     &to 0          &trans
+                            &to 4   &to 4   &kp LEFT_CONTROL    &kp RIGHT_ALT  &to 1        &trans
             >;
         };
 
@@ -64,8 +58,41 @@
             bindings = <
 &trans  &kp ESCAPE   &kp C_PLAY_PAUSE  &kp C_REWIND  &kp C_FAST_FORWARD  &kp UNDERSCORE      &kp MINUS     &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp BACKSPACE  &trans
 &trans  &kp TAB      &trans            &kp C_VOL_DN  &kp C_VOL_UP        &kp PLUS            &kp EQUAL     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp ENTER      &trans
-&trans  &kp C_RESET  &kp ASTRK         &trans        &trans              &kp PERIOD          &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &to 2          &trans
-                                       &trans        &to 0               &kp LEFT_COMMAND    &kp LEFT_ALT  &to 1         &trans
+&trans  &kp C_RESET  &kp ASTRK         &trans        &trans              &kp PERIOD          &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &to 0          &trans
+                                       &trans        &to 4               &kp LEFT_COMMAND    &kp LEFT_ALT  &to 1         &trans
+            >;
+        };
+
+        Strdy {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+
+            bindings = <
+&none  &kp V  &kp M  &kp L    &kp R      &kp P             &kp X             &kp F  &kp O    &kp U          &kp J      &none
+&none  &kp S  &kp T  &kp R    &kp D      &kp Y             &kp PERIOD        &kp N  &kp A    &kp E          &kp I      &none
+&none  &kp Z  &kp K  &kp Q    &kp G      &kp W             &kp B             &kp H  &kp SQT  &kp SEMICOLON  &kp COMMA  &none
+                     &kp TAB  &kp SPACE  &kp LEFT_SHIFT    &kp LEFT_CONTROL  &to 1  &to 0
+            >;
+        };
+
+        Shortcuts {
+            bindings = <
+&trans  &kp LA(TAB)  &trans     &trans     &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LC(A)    &trans     &trans     &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &trans  &trans  &trans  &trans  &trans  &trans
+                                &trans     &trans     &trans       &trans  &trans  &trans
+            >;
+        };
+
+        Gaming {
+            bindings = <
+&trans  &kp GRAVE   &kp N1  &kp N2  &kp N3     &kp N4       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp N5      &kp Q   &kp W   &kp E      &kp R        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp ESCAPE  &kp G   &kp P   &kp I      &kp T        &trans  &trans  &trans  &trans  &to 0   &trans
+                            &trans  &kp SPACE  &kp LCTRL    &trans  &trans  &trans
             >;
         };
     };
