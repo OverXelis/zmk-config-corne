@@ -85,10 +85,10 @@
 
         Default {
             bindings = <
-&trans  &kp Q                &kp W               &kp E                   &kp R                 &kp T            &kp Y            &kp U                  &kp I                    &kp O                &kp SQT              &trans
-&trans  &hmla_mt LEFT_WIN A  &hml_mt LEFT_ALT S  &hml_mt LEFT_CONTROL D  &hml_mt LEFT_SHIFT F  &kp G            &kp H            &hmr_mt RIGHT_SHIFT J  &hmr_mt RIGHT_CONTROL K  &hmr_mt RIGHT_ALT L  &hmr_mt RIGHT_GUI P  &trans
-&trans  &kp Z                &kp X               &kp C                   &kp V                 &kp B            &kp COMMA        &kp N                  &kp M                    &kp DOT              &kp SLASH            &trans
-                                                 &mod_lt 1 ESCAPE        &mod_lt 2 SPACE       &mod_lt 3 TAB    &mod_lt 4 ENTER  &mod_lt 5 BACKSPACE    &tog 6
+&trans  &kp Q                &kp W               &kp E                   &kp R                 &kp T              &kp Y            &kp U                  &kp I                    &kp O                &kp SQT              &trans
+&trans  &hmla_mt LEFT_WIN A  &hml_mt LEFT_ALT S  &hml_mt LEFT_CONTROL D  &hml_mt LEFT_SHIFT F  &kp G              &kp H            &hmr_mt RIGHT_SHIFT J  &hmr_mt RIGHT_CONTROL K  &hmr_mt RIGHT_ALT L  &hmr_mt RIGHT_GUI P  &trans
+&trans  &kp Z                &kp X               &kp C                   &kp V                 &kp B              &kp COMMA        &kp N                  &kp M                    &kp DOT              &kp SLASH            &trans
+                                                 &mod_lt 1 ESCAPE        &mod_lt 2 TAB         &mod_lt 3 SPACE    &mod_lt 4 ENTER  &mod_lt 5 BACKSPACE    &tog 6
             >;
         };
 
